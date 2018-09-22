@@ -567,10 +567,11 @@ namespace Cross_View.Parser
                     {
                         if (argAddress != 0)
                         {
-                            if (argAddress < 0x80000000 || argAddress > 0x83000000)
+                            if (address < 0x80000000 || address > 0x83000000)
                             {
-                                throw new Exception($"gsSPSegmentA no={index}"); // TODO: Change this to a Console.WriteLine if this path needs implemented.
+                                // TODO: Change this to a Console.WriteLine if this path needs implemented.
                                 // TODO: implement emu64::segchk(ulong) ?
+                                throw new Exception($"SPSegment found Illegal Address.\ngsSPSegmentA no={index}\nbase=Not Emulated\ngfxp={address}");
                             }
                         }
                     }
